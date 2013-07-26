@@ -39,10 +39,12 @@ function overlay(options) {
 						verticalAlign: 'middle',
 						textAlign: 'center',
 					}).append(
-						$('<div class="overlay-div">' + options.html + '</div>').css({
+						$('<div>').css({
 							display: 'inline-block',
 							backgroundColor: '#FFF'
 						})
+							.addClass('overlay-div')
+							.html(options.html)
 					)
 				)
 			);
