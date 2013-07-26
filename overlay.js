@@ -19,8 +19,7 @@ function overlay(options) {
 			left: 0,
 			right: 0,
 			zIndex: 1041,
-			backgroundColor: options.backgroundColor || '#000',
-			opacity: options.opacity || 0.8
+			backgroundColor: options.backgroundColor || 'rgba(0, 0, 0, 0.8)'
 		})
 		.hide()
 		.appendTo(document.body)
