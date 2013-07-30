@@ -3,7 +3,7 @@
 // Copyright 2013 Moshe Kolodny
 // Released under the MIT license
 
-function overlay(options) {
+$.zerolay = function(options) {
 	var $overlay;
 	
 	options = $.extend({
@@ -38,10 +38,11 @@ function overlay(options) {
 						verticalAlign: 'middle',
 						textAlign: 'center',
 					}).append(
-						$('<div>').css({
-							display: 'inline-block',
-							backgroundColor: '#FFF'
-						})
+						$('<div>')
+							.css({
+								display: 'inline-block',
+								backgroundColor: '#FFF'
+							})
 							.addClass('overlay-div')
 							.html(options.html)
 					)
@@ -50,7 +51,7 @@ function overlay(options) {
 	}
 	
 	return function(speed) {
-		$overlay.fadeOut(arguments.length ? speed : options.speed, function() {
+		$overlay.stop().fadeOut(arguments.length ? speed : options.speed, function() {
 			$overlay.remove();
 		});
 	}
